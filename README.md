@@ -27,3 +27,35 @@ Desde el menú de **Configuración**, el usuario puede elegir cómo visualizar l
 ---
 
 
+##  Estructura del Proyecto (Arquitectura)
+
+Basado en un diseño modular y orientado a objetos, el código se organiza en los siguientes paquetes:
+
+* **`PuntoEntrada`**: Contiene la clase `App.java` (Main).
+* **`Algoritmos`**: Estrategias de selección (`SelectorPorIntereses`, `SelectorPorRecientes`, `SelectorPorSeguidos`).
+* **`InterfazDeConsola`**: Gestión de menús y flujos de usuario (`Menu.java`).
+* **`Modelo`**: Clases entidad (`Usuario`, `Contenido`, `ContenidoMixto`, etc.).
+* **`Servicios`**: Lógica de negocio (`GestorUsuarios`, `GestorContenido`).
+
+---
+
+##  Gestión de Git y Ramas
+
+El proyecto sigue una estructura de ramificación organizada para el trabajo en equipo:
+
+* **`main`**: Rama principal con código estable y listo para entrega.
+* **`develop`**: Rama de integración de características.
+* **Ramas de características (Features):**
+  * `featured-javier`: Desarrollo de funcionalidades de Javier.
+  * `featured_Juan`: Desarrollo de funcionalidades de Juan.
+  * `featured_Brayan`: Desarrollo de funcionalidades de Brayan.
+
+---
+
+## Equipo de Desarrollo (@author)
+
+* **Javier** - [@featured-javier]
+* **Juan** - [@featured_Juan]
+* **Brayan** - [@featured_Brayan]
+
+---
