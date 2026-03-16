@@ -1,4 +1,4 @@
-package Red_Social_Mini.PuntoEntrada;
+package PuntoEntrada;
 
 public class App {
     
