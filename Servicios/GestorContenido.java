@@ -1,4 +1,4 @@
-package Red_Social_Mini.Servicios;
+package Servicios;
 
 public class GestorContenido {
     

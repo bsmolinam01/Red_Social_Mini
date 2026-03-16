@@ -1,4 +1,4 @@
-package Red_Social_Mini.Algoritmos;
+package Algoritmos;
 
 public class SelectorPorRecientes {
     
