@@ -2,12 +2,14 @@ package Algoritmos;
 
 import java.util.*;
 
+import Contenido.Contenido;
+import Contenido.Usuario;
+
 /**
  * Algoritmo 3: Prioriza publicaciones de usuarios que el usuario actual sigue.
  */
 public class SelectorPorSeguidos implements SelectorContenido {
 
-    @Override
     public List<Contenido> seleccionar(List<Contenido> contenidos, Usuario usuario) {
         List<Contenido> seguidosPrimero = new ArrayList<>();
         List<Contenido> resto = new ArrayList<>();
@@ -25,5 +27,11 @@ public class SelectorPorSeguidos implements SelectorContenido {
         // Combinar: seguidos primero, luego resto
         seguidosPrimero.addAll(resto);
         return seguidosPrimero;
+    }
+
+    @Override
+    public List seleccionar(List contenidos, Object usuario) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'seleccionar'");
     }
 }

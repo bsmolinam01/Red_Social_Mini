@@ -1,17 +1,17 @@
 // package PuntoEntrada;
-// App.java
-//import java.util.Arrays;
-//import java.util.List;
-
-/**
- * Punto de entrada de la aplicación RED_SOCIAL_MINI.
- *
- * Inicializa los datos de prueba (usuarios y contenidos)
- * y lanza el menú principal de autenticación.
- *
- * @author Brayan Stiven Molina Macías
- * @author Juan
- */
+// import java.util.Arrays;
+// import java.util.List;
+// 
+// 
+// /**
+//  * Punto de entrada de la aplicación RED_SOCIAL_MINI.
+//  *
+//  * Inicializa los datos de prueba (usuarios y contenidos)
+//  * y lanza el menú principal de autenticación.
+//  *
+//  * @author Brayan Stiven Molina Macías
+//  * @author Juan
+//  */
 // public class App {
 // 
 //     private static GestorUsuarios gestorUsuarios;

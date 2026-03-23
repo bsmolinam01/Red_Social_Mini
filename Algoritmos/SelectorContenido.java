@@ -1,26 +1,35 @@
-//SelectorContenido.java
-// import java.util.List;
-// 
+package Algoritmos;
+import java.util.List;
+
 /**
- * Define el contrato para los algoritmos de selección y ordenación
- * de contenidos que se mostrarán a un usuario.
+ * Interfaz que define el contrato para todos los algoritmos
+ * de selección y ordenación de contenidos.
  *
- * Cada implementación decidirá qué contenidos van primero
- * (por intereses, por fecha reciente, por usuarios seguidos, etc.).
+ * Permite implementar el patrón Strategy para cambiar dinámicamente
+ * cómo se ordena el feed de un usuario.
  *
  * @author Brayan Stiven Molina Macías
+ * @param <Usuario>
+ * @param <Contenido>
+
  */
-// public interface SelectorContenido {
-// 
-//     /**
-//      * A partir de una lista de todos los contenidos disponibles,
-//      * devuelve una nueva lista ordenada/priorizada según el
-//      * criterio del algoritmo para el usuario indicado.
-//      *
-//      * @param contenidos Lista completa de publicaciones de la plataforma.
-//      * @param usuario    Usuario para el que se genera el feed.
-//      * @return Lista de contenidos ordenados según el algoritmo.
-//      */
-//     List<Contenido> seleccionar(List<Contenido> contenidos, Usuario usuario);
-// }
-// 
+public interface SelectorContenido<Usuario, Contenido> {
+
+    /**
+     * Selecciona y ordena los contenidos según el criterio específico del algoritmo.
+     *
+     * @param contenidos Lista completa de todas las publicaciones disponibles en la plataforma.
+     * @param usuario Usuario para el que se genera el feed personalizado.
+     * @return Lista ordenada de contenidos priorizados para el usuario.
+     */
+    List<Contenido> seleccionar(List<Contenido> contenidos, Usuario usuario);
+
+    /**
+     * Nombre descriptivo del algoritmo para mostrar en la configuración.
+     */
+    default String getNombre() {
+        return this.getClass().getSimpleName().replace("Selector", "").toLowerCase();
+    }
+
+    List<Contenido.Contenido> seleccionar(List<Contenido.Contenido> contenidos, Contenido.Usuario usuario);
+}
