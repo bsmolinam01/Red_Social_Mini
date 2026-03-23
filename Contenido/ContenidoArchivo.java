@@ -21,6 +21,13 @@ public class ContenidoArchivo extends Contenido {
 
 
 
+    public ContenidoArchivo(Usuario u2, String string, Set<String> et2) {
+        //TODO Auto-generated constructor stub
+    }
+
+
+
+
     public String getRutaArchivo() {
         return rutaArchivo;
     }
