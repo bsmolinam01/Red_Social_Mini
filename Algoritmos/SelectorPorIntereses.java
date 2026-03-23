@@ -2,6 +2,10 @@ package Algoritmos;
 
 
 import java.util.*;
+import java.util.List;
+
+import Contenido.Contenido;
+import Contenido.Usuario;
 
 /**
  * Algoritmo 1: Prioriza publicaciones que compartan etiquetas
@@ -9,7 +13,6 @@ import java.util.*;
  */
 public class SelectorPorIntereses implements SelectorContenido {
 
-    @Override
     public List<Contenido> seleccionar(List<Contenido> contenidos, Usuario usuario) {
         List<Contenido> copia = new ArrayList<>(contenidos);
         Set<String> intereses = usuario.getIntereses();
@@ -31,5 +34,11 @@ public class SelectorPorIntereses implements SelectorContenido {
             }
         }
         return count;
+    }
+
+    @Override
+    public List seleccionar(List contenidos, Object usuario) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'seleccionar'");
     }
 }
