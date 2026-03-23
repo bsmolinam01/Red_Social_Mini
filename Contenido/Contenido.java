@@ -1,6 +1,7 @@
 package Contenido;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 public abstract class Contenido {
     private static int contadorId = 1;
@@ -34,6 +35,10 @@ public abstract class Contenido {
         this.etiquetas = etiquetas;
     }
 
+    public Contenido(Usuario u1, Set<String> etiquetas2) {
+        //TODO Auto-generated constructor stub
+    }
+
     // Getters obligatorios
     public Usuario getAutor() { return autor; }
     public LocalDateTime getFechaPublicacion() { return fechaPublicacion; }
@@ -44,6 +49,10 @@ public abstract class Contenido {
     public abstract String previsualizar();
     public abstract void verCompleto();
     public class Usuario {
+
+        public Usuario(Usuario u1, Set<String> etiquetas) {
+            //TODO Auto-generated constructor stub
+        }
 
         public String getNombreUsuario() {
             // TODO Auto-generated method stub
