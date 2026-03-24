@@ -19,6 +19,7 @@ public class ContenidoArchivo extends Contenido {
     }
 
 
+<<<<<<< HEAD
 
 
 
@@ -30,6 +31,8 @@ public class ContenidoArchivo extends Contenido {
 
 
 
+=======
+>>>>>>> featured_Juan
     public String getRutaArchivo() {
         return rutaArchivo;
     }
