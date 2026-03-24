@@ -24,8 +24,9 @@ package Servicios;
              return;
          }
  
-         Usuario u1 = it.next();
+ 
          Set<String> et1 = new HashSet<>(Arrays.asList("java", "programacion"));
+         Usuario u1 = it.next();
          addContenido(new ContenidoTexto(u1,
                  "Bienvenido a la mini red social en consola.",
                  et1));

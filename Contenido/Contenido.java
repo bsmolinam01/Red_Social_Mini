@@ -1,5 +1,6 @@
 package Contenido;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -35,8 +36,13 @@ public abstract class Contenido {
         this.etiquetas = etiquetas;
     }
 
-    public Contenido(Usuario u1, Set<String> etiquetas2) {
-        //TODO Auto-generated constructor stub
+    public Contenido(Usuario autor, Set<String> etiquetas) {
+        this.id = contadorId++;
+        this.autor = autor;
+        this.fechaPublicacion = LocalDateTime.now();
+        this.etiquetas = (etiquetas != null) ? new ArrayList<>(etiquetas) : new ArrayList<>();
+        this.texto = null;
+        this.titulo = null;
     }
 
     // Getters obligatorios
@@ -44,24 +50,9 @@ public abstract class Contenido {
     public LocalDateTime getFechaPublicacion() { return fechaPublicacion; }
     public List<String> getEtiquetas() { return etiquetas; }
     public String getTexto() { return texto; }
+    public String getTitulo() { return titulo; }
     
     // Métodos abstractos
     public abstract String previsualizar();
     public abstract void verCompleto();
-    public class Usuario {
-
-        public Usuario(Usuario u1, Set<String> etiquetas) {
-            //TODO Auto-generated constructor stub
-        }
-
-        public String getNombreUsuario() {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'getNombreUsuario'");
-        }
-
-        public void addPublicacion(Contenido c) {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'addPublicacion'");
-        }
-    }
 }

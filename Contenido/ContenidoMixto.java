@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 public class ContenidoMixto extends Contenido {
 
@@ -14,6 +15,11 @@ public class ContenidoMixto extends Contenido {
                           String rutaArchivo,
                           List<String> etiquetas) {
         super(autor, null, texto, LocalDateTime.now(), etiquetas);
+        this.rutaArchivo = rutaArchivo;
+    }
+
+    public ContenidoMixto(Usuario autor, String texto, String rutaArchivo, Set<String> etiquetas) {
+        super(autor, null, texto, LocalDateTime.now(), etiquetas != null ? List.copyOf(etiquetas) : null);
         this.rutaArchivo = rutaArchivo;
     }
 
