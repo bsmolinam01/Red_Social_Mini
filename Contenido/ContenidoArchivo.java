@@ -18,17 +18,14 @@ public class ContenidoArchivo extends Contenido {
         this.rutaArchivo = rutaArchivo;
     }
 
-
-
-
-
-
-        //TODO Auto-generated constructor stub
-    
-
-
-
-
+    public ContenidoArchivo(Usuario autor,
+                            String rutaArchivo,
+                            Set<String> etiquetas) {
+        super(autor, null, null, LocalDateTime.now(), etiquetas != null ? List.copyOf(etiquetas) : null);
+        this.rutaArchivo = rutaArchivo;
+        // Establece un título descriptivo si no se proporciona
+        this.titulo = rutaArchivo;
+    }
 
     public String getRutaArchivo() {
         return rutaArchivo;
@@ -42,11 +39,6 @@ public class ContenidoArchivo extends Contenido {
     public String previsualizar() {
         // Para archivos solo mostramos el título / nombre del archivo
         return getTitulo();
-    }
-
-    private String getTitulo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTitulo'");
     }
 
     @Override

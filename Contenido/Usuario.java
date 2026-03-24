@@ -26,6 +26,12 @@
      public Set<String> getIntereses() { return intereses; }
      public Set<Usuario> getSeguidos() { return seguidos; }
      public List<Contenido> getPublicaciones() { return publicaciones; }
+
+     public void addPublicacion(Contenido c) {
+         if (c != null) {
+             publicaciones.add(c);
+         }
+     }
  
      public void agregarInteres(String etiqueta) {
          intereses.add(etiqueta);

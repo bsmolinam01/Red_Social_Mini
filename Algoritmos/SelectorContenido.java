@@ -31,5 +31,5 @@ public interface SelectorContenido<Usuario, Contenido> {
         return this.getClass().getSimpleName().replace("Selector", "").toLowerCase();
     }
 
-    List<Contenido.Contenido> seleccionar(List<Contenido.Contenido> contenidos, Contenido.Usuario usuario);
+
 }
