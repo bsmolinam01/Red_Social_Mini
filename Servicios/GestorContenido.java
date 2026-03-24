@@ -35,7 +35,7 @@ package Servicios;
          Usuario u2 = it.next();
          Set<String> et2 = new HashSet<>(Arrays.asList("foto", "viaje"));
          addContenido(new ContenidoArchivo(u2,
-                 "datos/foto1.jpg",   // ajusta la ruta a tus archivos de prueba
+ "datos/foto1.jpg",   // ajusta la ruta a tus archivos de prueba
                  et2));
  
          if (!it.hasNext()) return;
