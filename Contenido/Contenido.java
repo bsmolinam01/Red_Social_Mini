@@ -12,82 +12,37 @@ public abstract class Contenido {
     protected String titulo;
     protected String texto;
     protected LocalDateTime fechaPublicacion;
-    protected List<Etiqueta> etiquetas;
+    protected List<String> etiquetas;
 
     // Constructor flexible para todos los tipos
     public Contenido(Usuario autor, String tituloOTexto, String textoOArchivo, 
-                     LocalDateTime fecha) {
+                     LocalDateTime fecha, List<String> etiquetas) {
+        this.id = contadorId++;
         this.autor = autor;
-        this.titulo = tituloOTexto;
-        this.texto = textoOArchivo;
-        this.fechaPublicacion = fecha;
-        this.etiquetas = new ArrayList<>();
-
-    }
-
-    public void agregarEtiqueta(Etiqueta etiqueta){
-        etiquetas.add(etiqueta);
-     }
-
-    public static int getContadorId() {
-        return contadorId;
-    }
-
-    public static void setContadorId(int contadorId) {
-        Contenido.contadorId = contadorId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Usuario getAutor() {
-        return autor;
-    }
-
-    public void setAutor(Usuario autor) {
-        this.autor = autor;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getTexto() {
-        return texto;
-    }
-
-    public void setTexto(String texto) {
-        this.texto = texto;
-    }
-
-    public LocalDateTime getFechaPublicacion() {
-        return fechaPublicacion;
-    }
-
-    public void setFechaPublicacion(LocalDateTime fechaPublicacion) {
-        this.fechaPublicacion = fechaPublicacion;
-    }
-
-    public List<Etiqueta> getEtiquetas() {
-        return etiquetas;
-    }
-
-    public void setEtiquetas(List<Etiqueta> etiquetas) {
+        
+        // Lógica para distinguir título/texto vs ruta archivo
+        if (textoOArchivo != null && !textoOArchivo.isEmpty() && 
+            !textoOArchivo.startsWith("ruta/")) {
+            // Si no parece ruta de archivo, es texto
+            this.texto = textoOArchivo;
+            this.titulo = tituloOTexto;
+        } else {
+            // Es archivo
+            this.titulo = tituloOTexto;
+            this.texto = null;
+        }
+        
+        this.fechaPublicacion = (fecha != null) ? fecha : LocalDateTime.now();
         this.etiquetas = etiquetas;
     }
 
-<<<<<<< HEAD
-    public Contenido(Usuario u1, Set<String> etiquetas2) {
-        //TODO Auto-generated constructor stub
+    public Contenido(Usuario autor, Set<String> etiquetas) {
+        this.id = contadorId++;
+        this.autor = autor;
+        this.fechaPublicacion = LocalDateTime.now();
+        this.etiquetas = (etiquetas != null) ? new ArrayList<>(etiquetas) : new ArrayList<>();
+        this.texto = null;
+        this.titulo = null;
     }
 
     // Getters obligatorios
@@ -95,30 +50,9 @@ public abstract class Contenido {
     public LocalDateTime getFechaPublicacion() { return fechaPublicacion; }
     public List<String> getEtiquetas() { return etiquetas; }
     public String getTexto() { return texto; }
+    public String getTitulo() { return titulo; }
     
     // Métodos abstractos
     public abstract String previsualizar();
     public abstract void verCompleto();
-    public class Usuario {
-
-        public Usuario(Usuario u1, Set<String> etiquetas) {
-            //TODO Auto-generated constructor stub
-        }
-
-        public String getNombreUsuario() {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'getNombreUsuario'");
-        }
-
-        public void addPublicacion(Contenido c) {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'addPublicacion'");
-        }
-=======
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
->>>>>>> featured_Juan
-    }
 }
